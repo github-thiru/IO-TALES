@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../assets/logo.png';
-import iconSearch from '../assets/Search.png';
+import iconSearch from '../assets/search.png';
 import iconUser from '../assets/contact.png';
 import iconCart from '../assets/cart.png';
 import iconMenu from '../assets/menu.png';
