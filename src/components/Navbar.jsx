@@ -10,13 +10,6 @@ export default function Navbar() {
   return (
 <>
 
-
-    
-      
-
-
-
-    
     <div className="relative" style={{backgroundImage:`url(${waveBottomm})`}}>
       
       {/* Navbar Content */}

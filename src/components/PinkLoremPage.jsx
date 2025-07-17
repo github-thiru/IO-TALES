@@ -18,13 +18,14 @@ import st from '../assets/str3.png'
 import pnkdd from "../assets/pnkd.png";
 import pnkddd from "../assets/pnkd2.png";
 import org from '../assets/org.png';
+import './pink.css'
 
 const PinkLoremPage = () => {
   return (
     <>
-      <div style={{ marginTop: "60px", paddingTop: "110px" }}></div>
+      {/* <div style={{ marginTop: "60px", paddingTop: "110px" }}></div> */}
       <div
-        className="min-h-screen bg-gradient-to-br  flex flex-col items-center justify-center relative overflow-hidden mt-50"
+        className="min-h-screen bg-gradient-to-br  flex flex-col items-center justify-center relative overflow-hidden  mb-50 mt-50 pt-20 z-10"
         style={{ background: "rgba(237, 55, 148, 1)" }}
       >
         {/* Background decorative circles */}
@@ -133,7 +134,7 @@ const PinkLoremPage = () => {
 {/* ------------------ */}
 
 
-        <div className="  w-[1000px] h-[700px] flex flex-row gap-6 justify-center items-center z-5 " >
+        <div className="  w-[1000px] h-[50vh] flex flex-row gap-6 justify-center items-center z-5 " >
   {/* Single Item */}
   <div className="flex flex-col items-center relative " style={{backgroundColor:"rgba(237, 55, 148, 1)"}}>
     
@@ -187,7 +188,7 @@ const PinkLoremPage = () => {
  <img
       src={cc}
       alt="ctx"
-      className="absolute top-[250px] w-[600px] left-0 z-0 "
+      className="absolute top-[40vh] w-[40vw] left-0 z-0 "
     />
  <img
       src={starr}
@@ -202,7 +203,7 @@ const PinkLoremPage = () => {
  <img
       src={muss}
       alt="ctx"
-      className="absolute top-[700px] w-[100px] left-[1250px]"
+      className="absolute top-[700px] w-[100px] left-[1250px] z-10"
     />
  <img
       src={smcc}
@@ -224,14 +225,16 @@ const PinkLoremPage = () => {
 
 {/* --------------- */}
 
-
+ <button className="w-full h-[100px] max-w-xs sm:max-w-sm md:max-w-md  text-pink-700 font-bold py-3 px-6 rounded-full shadow-md  transition-all duration-300 pb-[10px]">
+  
+  </button>
 
 
       </div>
 
-      <div style={{marginTop:"100px"}}>
+      {/* <div style={{marginTop:"100px"}}> */}
 
- <img
+ {/* <img
           src={pnkdd}
           alt="gn"
           className="absolute  top-[1900px] bottom-0 left-0 w-full z-10 mt-[10px] pt-[20px]"
@@ -245,8 +248,8 @@ const PinkLoremPage = () => {
           src={org}
           alt="gn"
           className="absolute  top-[1950px] bottom-0 left-0 w-full z-10 mt-[10px] pt-[20px]"
-        /> 
-      </div>
+        />  */}
+      {/* </div> */}
     </>
   );
 };

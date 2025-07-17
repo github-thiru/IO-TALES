@@ -20,7 +20,7 @@ const App = () => {
    <AboutIJoTales/>
   <Headingpage/>
   <Contentcards/>
-<Footer />
+<Footer/>
     </>
   )
 }

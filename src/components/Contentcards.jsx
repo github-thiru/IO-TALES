@@ -80,6 +80,8 @@ const Contentcards = () => {
   };
 
   const BlogCard = ({ post, index }) => (
+
+    
     <div className="group relative bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden 
       border border-white/20 hover:bg-white/20 transition-all duration-500 hover:scale-105 
       hover:-translate-y-2 hover:shadow-2xl min-w-[300px] mx-2">
@@ -138,7 +140,7 @@ const DecorativeRibbon = ({ className }) => (
 
 
   return (
-<div className="min-h-screen absolute w-full left-0 right-0 font-sans" style={{ backgroundColor: "rgba(8, 186, 173, 1)" }}>
+<div className="min-h-[100vh] absolute w-full left-0 right-0 font-sans" style={{ backgroundColor: "rgba(8, 186, 173, 1)" }}>
       {/* Custom Cursor */}
       <div 
         className="fixed w-3 h-3 bg-white/40 rounded-full pointer-events-none z-50 transition-all duration-100 ease-out"
@@ -179,27 +181,42 @@ const DecorativeRibbon = ({ className }) => (
     </p>
 
     {/* ✅ Proper Centered Brand Showcase */}
-    <div className="animate-fadeInUp flex justify-center" style={{ animationDelay: '0.6s' }}>
-      <div className="bg-white/20 backdrop-blur-md rounded-3xl p-8 border border-white/30 
-        hover:bg-white/25 transition-all duration-500 hover:scale-105 hover:shadow-2xl">
-        <div className="flex items-center justify-center space-x-12 text-white">
-          <div className="flex items-center space-x-3">
-            <Globe className="w-8 h-8 text-yellow-400" />
-            <span className="text-2xl font-bold">amazonin</span>
-          </div>
-          <div className="w-px h-12 bg-white/30"></div>
-          <div className="flex items-center space-x-3">
-            <TrendingUp className="w-8 h-8 text-yellow-400" />
-            <span className="text-2xl font-bold italic">firstcry</span>
-          </div>
-          <div className="w-px h-12 bg-white/30"></div>
-          <div className="flex items-center space-x-3">
-            <Target className="w-8 h-8 text-yellow-400" />
-            <span className="text-2xl font-bold italic">Hostkeys</span>
-          </div>
-        </div>
+    {/* ✅ Responsive Brand Showcase */}
+<div className="animate-fadeInUp flex justify-center px-4" style={{ animationDelay: '0.6s' }}>
+  <div className="bg-white/20 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-white/30 
+    hover:bg-white/25 transition-all duration-500 hover:scale-105 hover:shadow-2xl w-full max-w-5xl">
+    
+    {/* Brand Logos – Responsive Flex Wrap */}
+    <div className="flex flex-wrap sm:flex-nowrap items-center justify-center gap-6 sm:gap-12 text-white">
+      
+      {/* Amazon */}
+      <div className="flex items-center gap-2 sm:gap-3">
+        <Globe className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-400" />
+        <span className="text-lg sm:text-2xl font-bold">amazonin</span>
+      </div>
+
+      {/* Divider */}
+      <div className="hidden sm:block w-px h-8 sm:h-12 bg-white/30"></div>
+
+      {/* FirstCry */}
+      <div className="flex items-center gap-2 sm:gap-3">
+        <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-400" />
+        <span className="text-lg sm:text-2xl font-bold italic">firstcry</span>
+      </div>
+
+      {/* Divider */}
+      <div className="hidden sm:block w-px h-8 sm:h-12 bg-white/30"></div>
+
+      {/* Hostkeys */}
+      <div className="flex items-center gap-2 sm:gap-3">
+        <Target className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-400" />
+        <span className="text-lg sm:text-2xl font-bold italic">Hostkeys</span>
       </div>
     </div>
+  </div>
+</div>
+
+
   </div>
 </section>
 
@@ -207,7 +224,7 @@ const DecorativeRibbon = ({ className }) => (
 
 
       {/* Blog Section - Red */}
-      <section className="relative min-h-screen bg-gradient-to-br from-red-500 via-red-600 to-red-700 py-20 overflow-hidden">
+<section className="relative w-full min-h-[100dvh]  border border-white bg-gradient-to-br from-red-500 via-red-600 to-red-700 py-20 overflow-hidden">
         {/* Decorative Yellow Ribbon */}
         <div className="absolute top-0 left-0 w-full h-32 overflow-hidden">
           <div className="absolute -top-16 -left-16 w-64 h-64 border-8 border-yellow-400 rounded-full 
@@ -234,39 +251,47 @@ const DecorativeRibbon = ({ className }) => (
             </p>
           </div>
 
-          {/* Blog Cards Slider */}
-          <div className="relative">
-            {/* Navigation Buttons */}
-            <button 
-              onClick={prevSlide}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/20 
-                backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/30 
-                transition-all duration-300 hover:scale-110"
-            >
-              <ChevronLeft className="w-6 h-6 text-white" />
-            </button>
-            
-            <button 
-              onClick={nextSlide}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/20 
-                backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/30 
-                transition-all duration-300 hover:scale-110"
-            >
-              <ChevronRight className="w-6 h-6 text-white" />
-            </button>
 
-            {/* Blog Cards Container */}
-            <div className="overflow-hidden mx-12 pb-5">
-              <div 
-                className="flex transition-transform duration-500 ease-in-out"
-style={{ transform: `translateX(-${currentSlide * 320}px)` }}
-              >
-                {blogPosts.map((post, index) => (
-                  <BlogCard key={post.id} post={post} index={index} />
-                ))}
-              </div>
-            </div>
-          </div>
+          {/* Blog Cards Slider */}
+     <div className="relative w-full">
+  {/* Navigation Buttons – only visible on md and up */}
+  <button 
+    onClick={prevSlide}
+    className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/20 
+      backdrop-blur-md rounded-full items-center justify-center hover:bg-white/30 
+      transition-all duration-300 hover:scale-110"
+  >
+    <ChevronLeft className="w-6 h-6 text-white" />
+  </button>
+
+  <button 
+    onClick={nextSlide}
+    className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/20 
+      backdrop-blur-md rounded-full items-center justify-center hover:bg-white/30 
+      transition-all duration-300 hover:scale-110"
+  >
+    <ChevronRight className="w-6 h-6 text-white" />
+  </button>
+
+  {/* Blog Cards Container */}
+  <div className="px-4 md:px-12 pb-6">
+    {/* Mobile: vertical layout | Desktop: horizontal slider */}
+    <div
+      className={`flex flex-col md:flex-row md:gap-6 md:transition-transform md:duration-500 md:ease-in-out`}
+      style={{ transform: `translateX(-${currentSlide * 320}px)` }}
+    >
+      {blogPosts.map((post, index) => (
+        <div
+          key={post.id}
+          className="w-full md:min-w-[300px] md:max-w-[320px] mb-6 md:mb-0"
+        >
+          <BlogCard post={post} index={index} />
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
 
           {/* View More Button */}
           <div className="text-center mt-16">
@@ -282,14 +307,14 @@ style={{ transform: `translateX(-${currentSlide * 320}px)` }}
         </div>
 
         {/* Decorative Elements */}
-        <div className="absolute top-40 left-20 animate-bounce text-yellow-300" style={{ animationDelay: '1s' }}>
+        <div className="top-40 left-20 animate-bounce text-yellow-300" style={{ animationDelay: '1s' }}>
           <BookOpen className="w-8 h-8" />
         </div>
-        <div className="absolute bottom-40 right-20 animate-bounce text-yellow-300" style={{ animationDelay: '2s' }}>
+        <div className=" bottom-40 right-20 animate-bounce text-yellow-300" style={{ animationDelay: '2s' }}>
           <Award className="w-8 h-8" />
         </div>
       </section>
-
+{/* 
       <style jsx>{`
         @keyframes fadeInUp {
           from {
@@ -319,9 +344,9 @@ style={{ transform: `translateX(-${currentSlide * 320}px)` }}
         * {
           font-family: 'Inter', system-ui, -apple-system, sans-serif;
         }
-      `}</style>
+      `}</style> */}
 
-
+{/* 
        <div className="absolute bottom-0 left-0 w-full top-[1400px] z-5">
               <img src={rc} alt="Wave Bottom" className="w-full" />
             </div>
@@ -330,8 +355,11 @@ style={{ transform: `translateX(-${currentSlide * 320}px)` }}
             </div>
        <div className="absolute bottom-0 left-0 w-full   top-[1420px] bottom-0 left-[] w-full z-10  ">
               <img src={bc} alt="Wave Bottom" className="w-full" />
-            </div>
+            </div> */}
     </div >
+   
+  
+
   );
 };
 

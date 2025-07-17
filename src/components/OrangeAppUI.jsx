@@ -89,62 +89,71 @@ const OrangeAppUI = () => {
           {/* App Cards Section */}
           <div className="relative max-w-6xl mx-auto">
             {/* Navigation arrows */}
-            <button className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white p-4 rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg z-20">
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-            <button className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white p-4 rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg z-20">
-              <ChevronRight className="w-6 h-6" />
-            </button>
+           {/* Left Button - Hidden on mobile */}
+<button className="hidden sm:block absolute left-4 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white p-4 rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg z-20">
+  <ChevronLeft className="w-6 h-6" />
+</button>
+
+{/* Right Button - Hidden on mobile */}
+<button className="hidden sm:block absolute right-4 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white p-4 rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg z-20">
+  <ChevronRight className="w-6 h-6" />
+</button>
+
             
             {/* App Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-16">
-              {apps.map((app) => (
-                <div key={app.id} className={`${app.bgColor} p-4 rounded-3xl shadow-2xl hover:scale-105 transition-transform duration-300`}>
-                  <div className="bg-black rounded-2xl p-4 relative overflow-hidden">
-                    {/* Phone mockup */}
-                    <div className="bg-gray-900 rounded-xl p-2 relative">
-                      <div className="bg-gray-800 rounded-lg h-80 relative overflow-hidden">
-                        <img 
-                          src={app.image} 
-                          alt={app.title}
-                          className="w-full h-full object-cover rounded-lg"
-                        />
-                        
-                        {/* Heart icon */}
-                        <div className="absolute top-4 right-4 bg-black bg-opacity-50 rounded-full p-2">
-                          <Heart className="w-4 h-4 text-white" />
-                        </div>
-                        
-                        {/* Play button */}
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="bg-red-500 rounded-full p-4 shadow-lg">
-                            <Play className="w-8 h-8 text-white fill-current" />
-                          </div>
-                        </div>
-                        
-                        {/* Bottom controls */}
-                        <div className="absolute bottom-2 left-2 right-2 flex justify-between items-center text-white text-xs">
-                          <span>00 / 15:30</span>
-                          <div className="flex gap-2">
-                            <div className="w-2 h-2 bg-white rounded-full"></div>
-                            <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* App info */}
-                    <div className="mt-4 text-white text-center">
-                      <h3 className="font-bold text-sm mb-1">{app.title}</h3>
-                      <p className="text-green-400 font-bold text-lg mb-3">{app.price}</p>
-                      <button className="bg-green-500 text-white px-6 py-2 rounded-full font-bold hover:bg-green-600 transition-colors duration-300 text-sm">
-                        SHOP NOW
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))}
+         {/* App Cards Grid */}
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 sm:px-6 md:px-12 lg:px-16">
+  {apps.map((app) => (
+    <div
+      key={app.id}
+      className={`${app.bgColor} w-full p-4 rounded-3xl shadow-2xl hover:scale-105 transition-transform duration-300`}
+    >
+      <div className="bg-black rounded-2xl p-4 relative overflow-hidden">
+        {/* Phone mockup */}
+        <div className="bg-gray-900 rounded-xl p-2 w-full">
+          <div className="bg-gray-800 rounded-lg h-80 relative overflow-hidden">
+            <img
+              src={app.image}
+              alt={app.title}
+              className="w-full h-full object-cover rounded-lg"
+            />
+
+            {/* Heart icon */}
+            <div className="absolute top-4 right-4 bg-black bg-opacity-50 rounded-full p-2">
+              <Heart className="w-4 h-4 text-white" />
             </div>
+
+            {/* Play button */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="bg-red-500 rounded-full p-4 shadow-lg">
+                <Play className="w-8 h-8 text-white fill-current" />
+              </div>
+            </div>
+
+            {/* Bottom controls */}
+            <div className="absolute bottom-2 left-2 right-2 flex justify-between items-center text-white text-xs">
+              <span>00 / 15:30</span>
+              <div className="flex gap-2">
+                <div className="w-2 h-2 bg-white rounded-full"></div>
+                <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* App info */}
+        <div className="mt-4 text-white text-center">
+          <h3 className="font-bold text-sm mb-1">{app.title}</h3>
+          <p className="text-green-400 font-bold text-lg mb-3">{app.price}</p>
+          <button className="bg-green-500 text-white px-6 py-2 rounded-full font-bold hover:bg-green-600 transition-colors duration-300 text-sm">
+            SHOP NOW
+          </button>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
           </div>
           
           {/* Pagination dots */}

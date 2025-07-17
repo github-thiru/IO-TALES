@@ -12,7 +12,7 @@ const AboutIJoTales = () => {
         href="https://fonts.googleapis.com/css2?family=Schoolbell&family=Comic+Neue:wght@300;400;700&display=swap"
         rel="stylesheet"
       />
-      <div style={{}}></div>
+      {/* <div style={{}}></div> */}
       <div className="min-h-screen bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 relative overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute top-16 left-16 text-yellow-400 text-4xl ">
@@ -26,7 +26,7 @@ const AboutIJoTales = () => {
         </div>
 
         {/* Musical note */}
-        <Music className="absolute top-20 right-32 text-white w-8 h-8  delay-300" />
+        <Music className="absolute top-20 right-32 text-white w-8 h-8  delay-300 z-10" />
 
         {/* House icon */}
         <Home className="absolute top-20 right-16 text-white w-8 h-8 animate-pulse" />
@@ -80,7 +80,7 @@ const AboutIJoTales = () => {
             <div className="flex items-center justify-center gap-4 mb-6">
               <span className="text-yellow-400 text-2xl">✨</span>
               <h2
-                className="text-white text-2xl font-bold uppercase tracking-wider"
+                className="text-white text-2xl font-bold uppercase tracking-wider z-10"
                 style={{ fontFamily: "Comic Neue, cursive" }}
               >
                 About
@@ -92,8 +92,8 @@ const AboutIJoTales = () => {
               className="text-6xl md:text-7xl font-bold mb-4"
               style={{ fontFamily: "Comic Neue, cursive" }}
             >
-              <span className="text-yellow-400">i </span>
-              <span className="text-green-400">jo tales</span>
+              <span className="text-yellow-400 z-20">i </span>
+              <span className="text-green-400 z-20" >jo tales</span>
             </h1>
 
             <p

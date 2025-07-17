@@ -1,3 +1,96 @@
+// import React from "react";
+
+// const Footer = () => {
+//   return (
+//     <>
+//     <footer className="bg-[#1F1F1F] text-white w-full px-6 pt-12 pb-6 mt-[1400px]">
+//       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10 border-b border-gray-700 pb-12">
+
+//         {/* Newsletter Section */}
+//         <div className="md:col-span-1">
+//           <h2 className="font-bold text-lg mb-2 leading-snug">
+//             Subscribe to the<br />io Tales Newsletter
+//           </h2>
+//           <p className="text-sm text-gray-400 mb-4">
+//             Latest news, musings, announcements and<br />updates direct to your inbox.
+//           </p>
+//           <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full">
+//             SUBSCRIBE
+//           </button>
+//         </div>
+
+//         {/* Products */}
+//         <div>
+//           <h3 className="font-semibold mb-3">Products</h3>
+//           <ul className="text-sm text-gray-400 space-y-2">
+//             <li>Product 1</li>
+//             <li>Product 2</li>
+//             <li>Product 3</li>
+//             <li>Product 4</li>
+//             <li>Product 5</li>
+//           </ul>
+//         </div>
+
+//         {/* Company */}
+//         <div>
+//           <h3 className="font-semibold mb-3">Company</h3>
+//           <ul className="text-sm text-gray-400 space-y-2">
+//             <li>Menu 1</li>
+//             <li>Menu 2</li>
+//             <li>Menu 3</li>
+//             <li>Menu 4</li>
+//             <li>Menu 5</li>
+//             <li>Menu 6</li>
+//             <li>Menu 7</li>
+//             <li>Menu 8</li>
+//           </ul>
+//         </div>
+
+//         {/* Resources */}
+//         <div>
+//           <h3 className="font-semibold mb-3">Resources</h3>
+//           <ul className="text-sm text-gray-400 space-y-2">
+//             <li>Menu 1</li>
+//             <li>Menu 2</li>
+//             <li>Menu 3</li>
+//             <li>Menu 4</li>
+//             <li>Menu 5</li>
+//           </ul>
+//         </div>
+
+//         {/* Social */}
+//         <div>
+//           <h3 className="font-semibold mb-3">Social</h3>
+//           <ul className="text-sm text-gray-400 space-y-2">
+//             <li>Menu 1</li>
+//             <li>Menu 2</li>
+//             <li>Menu 3</li>
+//             <li>Menu 4</li>
+//             <li>Menu 5</li>
+//           </ul>
+//         </div>
+//       </div>
+
+//       {/* Bottom Section */}
+//       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center pt-6 text-sm text-gray-500">
+//         <p className="mb-4 sm:mb-0">&copy; 2025 Brand Name. All Rights Reserved.</p>
+//         <div className="flex flex-wrap gap-2 justify-center">
+//           <img src="/icons/visa.svg" alt="Visa" className="h-5" />
+//           <img src="/icons/mastercard.svg" alt="MasterCard" className="h-5" />
+//           <img src="/icons/paypal.svg" alt="PayPal" className="h-5" />
+//           <img src="/icons/skrill.svg" alt="Skrill" className="h-5" />
+//           <img src="/icons/discover.svg" alt="Discover" className="h-5" />
+//           <img src="/icons/gpay.svg" alt="Google Pay" className="h-5" />
+//         </div>
+//       </div>
+//     </footer>
+//     </>
+//   );
+// };
+
+// export default Footer;
+
+
 import React, { useState } from 'react';
 
 function Footer() {
@@ -34,7 +127,13 @@ function Footer() {
   };
 
   return (
-    <div className="min-h-screen relative top-[1500px] w-full font-sans   z-15" style={{backgroundColor:"rgba(47, 47, 47, 1)"}}>
+    // <div className="min-h-screen relative top-[1500px] w-full font-sans   z-15" style={{backgroundColor:"rgba(47, 47, 47, 1)"}}>
+    <div
+  className="min-h-screen relative w-full font-sans z-15 
+             top-[2900px] md:top-[1500px]"
+  style={{ backgroundColor: "rgba(47, 47, 47, 1)" }}
+>
+
       
       {/* Red top banner with scalloped edge - with proper spacing */}
       <div className="w-full h-24 bg-red-600 relative z-1">
@@ -103,28 +202,32 @@ function Footer() {
                 updates about the next book.
               </p>
 
-              <div className="flex flex-col gap-3">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={handleEmailChange}
-                  onKeyPress={handleKeyPress}
-                  placeholder="Enter your email"
-                  className="px-4 py-3 bg-gray-800 text-white rounded-md border border-gray-600 focus:outline-none focus:border-green-500 w-72 text-sm transition-colors duration-200"
-                  disabled={isSubmitting}
-                />
-                <button
-                  onClick={handleSubmit}
-                  disabled={isSubmitting || !email.trim()}
-                  className={`font-semibold py-3 px-6 rounded-md transition-colors duration-200 text-sm tracking-wide ${
-                    isSubmitting || !email.trim()
-                      ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
-                      : 'bg-green-600 hover:bg-green-700 text-white'
-                  }`}
-                >
-                  {isSubmitting ? 'SUBSCRIBING...' : 'SUBSCRIBE'}
-                </button>
-              </div>
+             <div className="flex flex-col gap-3 items-center w-full max-w-sm mx-auto px-4">
+  <input
+    type="email"
+    value={email}
+    onChange={handleEmailChange}
+    onKeyPress={handleKeyPress}
+    placeholder="Enter your email"
+    className="w-full px-4 py-3 bg-gray-800 text-white rounded-md border border-gray-600 
+               focus:outline-none focus:border-green-500 text-sm transition-colors duration-200"
+    disabled={isSubmitting}
+  />
+  
+  <button
+    onClick={handleSubmit}
+    disabled={isSubmitting || !email.trim()}
+    className={`w-full font-semibold py-3 px-6 rounded-md transition-colors duration-200 
+                text-sm tracking-wide ${
+                  isSubmitting || !email.trim()
+                    ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
+                    : 'bg-green-600 hover:bg-green-700 text-white'
+                }`}
+  >
+    {isSubmitting ? 'SUBSCRIBING...' : 'SUBSCRIBE'}
+  </button>
+</div>
+
             </div>
 
             {/* Links Grid */}
